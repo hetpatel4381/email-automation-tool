@@ -1,13 +1,14 @@
 import express from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
-const PORT = 3000;
-
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.get("/", async (req, res) => {
+  res.send("Welcome to Gmail API with NODE.JS");
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server running at port 3000");
 });
